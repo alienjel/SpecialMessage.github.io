@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpecialMsg</title>
+
+    <style>
+        body {
+            background-color: #BFD4DB;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .pop-up {
+            display: block;
+            background-color: #A4C3D2;
+            width: 30%;
+            margin: auto;
+            margin-top: 8%;
+            padding: 20px;
+            text-align: justify;
+            border-radius: 10px;
+            box-shadow: -3px 3px 7px #888888;
+        }
+
+        #main {
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            margin: auto;
+            padding: 10px;
+            border-radius: 5px;
+            border: solid 1px aliceblue;
+            background-color: aliceblue;
+            box-shadow: 1px 1px 7px #7299a3;
+            transition: 0.5s ease;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: #78A2CC;
+            border: solid 1px #78A2CC;
+            color: white;
+        }
+
+        h6 {
+            display: none;
+        }
+
+        #PS {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="pop-up">
+        <h1 id="header">A special message is waiting for you from Angel!</h1>
+        <h3 id="main">Click the button to read!</h3>
+        <button onclick="popUp()" id="button">Read</button>
+        <h6 id="sub"></h6>
+        <button onclick="psMsg()" id="PS">P.S!!</button>
+    </div>
+
+    <script>
+        function hideButton() {
+            let button = document.getElementById('button');
+            button.style.display = 'none';
+
+            let button2 = document.getElementById('PS');
+            button2.style.display = 'block';
+        }
+
+        function popUp() {
+            hideButton();
+            document.getElementById('header').innerHTML = "Greetings to our ITWS-02 professor!"
+            document.getElementById('main').innerHTML = "First of all, I would like to say thank you for the wonderful semester we've had together with you, it was really nice, no, it was really actually great to have you as our professor. I've learnt so much from you, especially in our case study, thank you Ma'am Roan for the advices you gave and pointed out our mistakes so we could improve better.";
+
+            let main = document.getElementById('main');
+            main.style.textAlign = 'justify';
+        }
+
+        function psMsg() {
+            let ps = document.getElementById('sub');
+            ps.style.display = 'block';
+
+            let button = document.getElementById('PS');
+            button.style.display = 'none';
+
+            document.getElementById('sub').innerHTML = "P.S Thank you so much po sa 1.25 na grades, love you maam!"
+        }
+    </script>
+</body>
+</html>
